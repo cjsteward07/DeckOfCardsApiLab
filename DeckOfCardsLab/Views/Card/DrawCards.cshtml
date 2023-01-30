@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DeckOfCardsLab.Models.Card>
+
+@*@model IEnumerable<DeckOfCardsApi.Models.Card>*@
+
+
+@{
+    ViewData["Title"] = "Draw Cards";
+}
+
+<h1>Your 5 Cards!</h1>
+
+<p>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Suit)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                    <img src="@Html.Raw(item.Image)" alt="HaHa Nice Try!">
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suit)
+            </td>
+            <td>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
